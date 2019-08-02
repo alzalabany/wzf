@@ -1,4 +1,5 @@
-import { append } from "../helper";
+import { createSelector } from "reselect";
+import { append } from "sdk/helper";
 
 // Const
 export const leaf = "book";
@@ -77,3 +78,14 @@ export const update = payload => ({
 });
 
 // Selectors
+export const select = store => store[leaf];
+export const selectOfAuthor = createSelector(
+  select,
+  (_, id) => id,
+  (state, id) => {
+    console.log("State is", state.byAuthor[id]);
+    const arr = state.byAuthor[id];
+    if (!arr) return [];
+    return arr.map(id => state.byId[id]);
+  }
+);

@@ -67,3 +67,5 @@ export const update = payload => ({
 });
 
 // Selectors
+export const select = store => store[leaf] || initialState;
+export const selectById = (store, id) => select(store).byId[id];

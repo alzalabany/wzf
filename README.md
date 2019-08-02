@@ -1,6 +1,21 @@
 "# wzf"
 
-# Bootstraping App
+# How to run ?
+
+```sh
+> node serve.js
+```
+
+this will run both api and client apps.
+
+# disclaimer
+
+- 100% of code contained in this repo is hand written by me <alzalabany@gmail.com> and it contain no -copy/paste- or old code.
+- this repo was built as per your request for sole purpose of wuzzuf interview.
+
+# Steps i took
+
+## Bootstraping App
 
 ```sh
 mkdir test
@@ -17,10 +32,11 @@ npx create-react-app client
 - react-router-dom : for routing
 - styled-components : styling
 - axios : http client
+- reselect: to show memoizing selectors in work
 
 ### api
 
-- nothing needed.
+- just express
 
 ## Preparation
 
@@ -31,8 +47,15 @@ npx create-react-app client
 3. clean cra src folder "cd client && rm App.\*"
 4. create project folder structure
 5. `mkdir -p src/Components src/Pages src/sdk`
-6. create common components found in wireframe
-   6.1 `cd Components && touch PageTitle.js Button.js Thumbnail.js Form/Form/index.js Input.js Form/Select.js`
+   1. src/Components -> will hold pure presentational components/ui library component
+   2. src/Pages -> or better named src/App1 if there was many sub apps in client, this one contain containers and views of app.
+   3. src/sdk -> this is a -cross platform- area, usually should be an npm package of its own, all logic should be placed here to allow for maximum code sharing between projects -mobile app ?-
+
+Core values are :-
+
+1. keep all your logic in sdk
+2. keep your App pages lite and fast
+3. App pages should be councerned with A11y & data binding only
 
 ### preparing Api env.
 
@@ -79,6 +102,16 @@ next lets configure home router and try to run our first run :).
 - data will be kept identical to remote source, with addition of some indexs to help in sorting and filtering
 - selectors will utlize React.memo to memoize maping
 - all code inside this folder should be 100% unit testable
+
+### Folder structure
+
+- < Module >
+  - Index.js : redux ducks pattern
+  - actions.js : redux thunks and validation logic
+  - tests : all tests inside this folder
+- api.js : setup axois client
+- hooks : collection of react hooks (cross platform hooks only)
+- store : redux store config.
 
 ## Planning ui
 

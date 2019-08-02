@@ -28,3 +28,16 @@ code {
 }
 .pagination > li {
 }
+
+form > label,
+form > label > input,
+form > label > textarea {
+  display: block;
+}
+
+form {
+  padding: 1rem;
+}
+form > label {
+  margin-bottom: 1rem;
+}

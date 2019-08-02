@@ -18,6 +18,26 @@ router.get("/api/authors", function(req, res, next) {
   res.json(authors);
 });
 
+// any add
+router.post("/api/*", function(req, res, next) {
+  res.status(201).json({
+    ok: true,
+    // generate random alpha numric Id
+    insertId:
+      Math.random()
+        .toString(36)
+        .substr(2, 9) +
+      "-" +
+      Math.random()
+        .toString(36)
+        .substr(2, 9)
+  });
+});
+
+router.put("/api/*", function(req, res, next) {
+  res.status(201).json({ ok: true });
+});
+
 router.get("/api", function(req, res, next) {
   res.json({
     books,

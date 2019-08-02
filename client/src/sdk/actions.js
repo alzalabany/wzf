@@ -1,5 +1,5 @@
 import { batch } from "react-redux";
-import * as Books from "./Book/actions";
+import * as Books from "./book/actions";
 import * as Authors from "./author/actions";
 import * as Categories from "./category/actions";
 
@@ -19,3 +19,5 @@ export const fetchAll = () => (dispatch, getState, { api }) => {
     );
   // .catch(e => dispatch(hasError(e)));
 };
+
+export { Books, Authors, Categories };

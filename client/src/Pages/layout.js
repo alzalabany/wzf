@@ -8,7 +8,7 @@ const Container = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
 `;
 const Nav = styled.nav`
   width: 100%;
@@ -18,6 +18,7 @@ const Nav = styled.nav`
   border-bottom: 1px solid #ccc;
   display: flex;
   padding: 0 1rem;
+  background-color: ${props => props.theme.primary || "#FFF"};
   > a {
     font-size: 2rem;
     line-height: 5rem;

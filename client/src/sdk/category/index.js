@@ -1,5 +1,3 @@
-import { append } from "../helper";
-
 // Const
 export const leaf = "category";
 const initialState = {
@@ -62,3 +60,6 @@ export const update = payload => ({
 });
 
 // Selectors
+export const select = store => store[leaf] || initialState;
+export const selectById = (store, id) =>
+  id ? select(store).byId[id] : undefined;

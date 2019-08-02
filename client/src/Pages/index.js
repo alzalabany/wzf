@@ -16,7 +16,9 @@ const Error404 = () => (
 
 export default () => (
   <Layout>
-    <div style={{ flex: 1, minHeight: "calc(100vh - 6rem)" }}>
+    <div
+      style={{ flex: 1, minHeight: "calc(100vh - 6rem)", overflowX: "hidden" }}
+    >
       <Switch>
         <Route path="/author" component={Author} />
         <Route path="/book" component={Book} />

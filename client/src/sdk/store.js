@@ -1,9 +1,9 @@
 import { combineReducers, createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import api from "./api";
-import BookReducer, { leaf as Bookleaf } from "./Book/reducer.duck";
-import AuthorReducer, { leaf as Authorleaf } from "./author/reducer.duck";
-import CateogryReducer, { leaf as Cateogryleaf } from "./category/reducer.duck";
+import BookReducer, { leaf as Bookleaf } from "./book";
+import AuthorReducer, { leaf as Authorleaf } from "./author";
+import CateogryReducer, { leaf as Cateogryleaf } from "./category";
 
 const STORAGE_ADDR = "booksapp.v1.1";
 
