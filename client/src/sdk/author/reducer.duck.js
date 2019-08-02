@@ -1,17 +1,15 @@
 import { append } from "../helper";
 
 // Const
-export const leaf = "book";
+export const leaf = "authors";
 const initialState = {
   byId: {},
-  byAuthor: {},
-  byCategory: {},
-  byYear: {}
+  byTitle: {}
 };
 
-const ADD_ONE = "/book/ADD_ONE/";
-const ADD_MANY = "/book/MERGE/";
-const UPDATE = "/book/UPDATE/";
+const ADD_ONE = "/authors/ADD_ONE/";
+const ADD_MANY = "/authors/MERGE/";
+const UPDATE = "/authors/UPDATE/";
 
 // helpers & logic
 
@@ -23,17 +21,9 @@ function addAndIndex(state, payload) {
       [id]: payload,
       ...state.byId
     },
-    byAuthor: {
-      ...state.byAuthor,
-      [payload.author]: append(state.byAuthor[payload.author], id)
-    },
-    byCategory: {
-      ...state.byCategory,
-      [payload.category]: append(state.byCategory[payload.category], id)
-    },
-    byYear: {
-      ...state.byYear,
-      [payload.publishYear]: append(state.byYear[payload.publishYear], id)
+    byTitle: {
+      ...state.byTitle,
+      [payload.jobTitle]: append(state.byTitle[payload.jobTitle], id)
     }
   };
 }

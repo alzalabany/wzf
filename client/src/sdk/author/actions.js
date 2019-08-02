@@ -7,7 +7,7 @@ import { merge } from "./reducer.duck";
 
 export const fetch = () => (dispatch, getState, { api }) => {
   return api
-    .get("/")
+    .get("/author")
     .then(r => r.data)
     .then(data => dispatch(merge(data)));
   // .catch(e => dispatch(hasError(e)));
