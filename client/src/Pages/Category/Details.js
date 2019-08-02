@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../sdk/actions";
 import Book from "../../Components/Book";
+import { usePagination } from "../../sdk/hooks";
 
 function HomePage({ cat, book }) {
+  const [slice, Controls] = usePagination(cat);
   useEffect(() => {
     // fetch books
     // props.fetchAll();
@@ -12,7 +14,8 @@ function HomePage({ cat, book }) {
 
   return (
     <div>
-      {cat.map(data => (
+      {Controls}
+      {slice.map(data => (
         <Book data={book[data]} key={data} />
       ))}
     </div>

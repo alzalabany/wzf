@@ -17,6 +17,7 @@ const UPDATE = "/book/UPDATE/";
 
 function addAndIndex(state, payload) {
   const { id } = payload;
+  if (state.byId[id]) return state;
   return {
     ...state,
     byId: {

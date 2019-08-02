@@ -72,3 +72,17 @@ export default () => (
 ```
 
 next lets configure home router and try to run our first run :).
+
+## Planning Sdk
+
+- will use redux to act as (client side database).
+- data will be kept identical to remote source, with addition of some indexs to help in sorting and filtering
+- selectors will utlize React.memo to memoize maping
+- all code inside this folder should be 100% unit testable
+
+## Planning ui
+
+1. need layout component to persist sidebar and topnav
+2. develop sdk and complete unit tests for it
+3. write selectors for data
+4. sidebar will list all categories
